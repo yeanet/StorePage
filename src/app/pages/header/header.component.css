@@ -1,0 +1,92 @@
+.general-styles{
+    background-color: white;
+    color:black;
+}
+.sectionTop{
+display: flex;
+flex-direction: row;
+align-items: center;
+position: relative;
+padding: 10px 16px;
+height: 64px;
+background-color: #131a22;
+}
+
+@font-face {
+    font-family: 'LobsterTwo';
+    src: url('../../../assets/fonts/LobsterTwo-Italic.ttf');
+}
+
+.navbar-brand  {
+    font-size: 2rem;
+    color:white;
+    font-family: 'LobsterTwo', sans-serif;
+  }
+
+.img-carrito{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 0px;
+    cursor:pointer;
+    display: block;
+   
+}
+.sidebar-social a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar-social a span {
+    color: black;
+    font-size: 15px;
+    padding: 5px 0 10px 0;
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+  }
+  
+  #cart_menu_num {
+    top: 0x;
+    position: relative;
+    left: 20px;
+    background: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+  }
+  .form-control{
+    background-color: white;
+    border-bottom-right-radius:5px;
+    border-top-right-radius:5px;
+    border-left-color:#ffd54b;
+    color: #131a22;
+    border-top-color: #131a22;
+    border-bottom-color: #131a22;
+    border-left-color: #131a22;
+    height: 45px;
+  }
+  .input-group{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-right: 10px;
+  }
+  
+  .input-group-text{
+    border-radius: 5px;
+    background-color: #ffd54b;border-color: #131a22;
+  }
+  .nav-link{
+    color:white;
+  }
+  

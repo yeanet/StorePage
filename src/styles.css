@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.text-bold{
+    font-weight: 600 !important;
+}
+.text-bold:hover{
+    font-weight: 600 !important;
+    color: #C7511F;
+}
+.text-bold-price{
+    font-weight: 600 !important;
+}
+

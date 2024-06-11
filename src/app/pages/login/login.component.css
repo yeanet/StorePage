@@ -1,0 +1,14 @@
+.img-fluid{
+    /*background-color: #508bfc;*/
+     border-radius: 1rem 0 0 1rem;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     height: 530px; 
+     width: 400;
+}
+.navbar-brand  {
+    font-size: 3rem;
+    color:black;
+    font-family: 'LobsterTwo', sans-serif;
+  }

@@ -1,0 +1,39 @@
+<div class="general-styles">
+    <section class="sectionTop" >
+       <a class="navbar-brand ms-3" href="#">Super Market</a>
+        <div class="input-group ">
+          <input type="text" class="form-control" placeholder="Search" aria-label="Search" #search aria-describedby="addon-wrapping"  (keyup.enter)="onEnter(search.value)">
+          <button class="input-group-text" id="addon-wrapping"><i class="bi bi-search" ></i></button>
+        </div>
+        <a routerLink="/cart" (click)="onOption('cart')"><span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">{{cantidad}}</span>
+          <!-- <img src="../assets/carrito.png" class="img-carrito" routerLink="/cart" > -->
+          <i class="text-white bi bi-cart3 h4 me-5"></i>
+        </a>
+      <i class="bi bi-person-circle h5 me-2 mt-3 text-white"></i>
+      <a class="mt-2 text-white"  routerLink="/login" *ngIf="!logueado" style="cursor:pointer;">Login</a>
+      <a class="mt-2 text-white" *ngIf="logueado" (click)="logout()" style="cursor:pointer;">Logout</a>
+      <br>
+    </section>
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <button class="navbar-toggler" type="button" style="color: white;" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa fa-bars"></i></span>
+      </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="" [ngClass]="{active:menuOption=='home'}" (click)="onOption('home')">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="products" [ngClass]="{active:menuOption=='products'}" (click)="onOption('products')">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="contact" [ngClass]="{active:menuOption=='contact'}" (click)="onOption('contact')">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="administration" *ngIf="logueado" [ngClass]="{active:menuOption=='administration'}" (click)="onOption('administration')">Administration</a>
+            </li>
+         </ul>
+        </div>
+     </nav>
+

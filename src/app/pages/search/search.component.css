@@ -1,0 +1,45 @@
+img.grande{
+    width: 140px;
+    height: 140px;
+   position: relative;
+   margin: auto;
+   top: 5px;
+   bottom: 0;
+   left: 0;
+   right: 0;
+}
+
+.card:hover{
+    box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+    transition : 0.1s ease-in-out;
+    border-radius : 5px;
+}
+
+.pagination{
+    justify-content:center;
+}
+.fa-star{
+    color:goldenrod;
+   }
+   .fa-star-half{
+       color:goldenrod;
+   }
+
+   .shop_toolbar_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+    background: #f9f9f97d;
+   }
+   .form-select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    margin: 0 auto;
+
+   }

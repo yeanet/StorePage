@@ -1,0 +1,33 @@
+<app-header></app-header>
+<section class="product mb-5">
+  <div class="container">
+    <div class="row py-5">
+      <div class="col-lg-5 m-auto text-center">
+      <h1>What's Treding</h1>
+      </div>
+    </div>
+    
+    <div class="container-lg" *ngIf="!loading">
+      <div class="row">
+       <div class="col-lg-3 text-center" *ngFor="let product of productList| paginate:{ itemsPerPage: 12, currentPage: page }">
+        <div class="card border-1 bg-white mb-4 border-color=bg-light" style="width: 15rem;height: 22rem; text-align: center;" (click)="navegate(product.id)"> 
+          <img src="{{product.image}}" class="grande img-fluid card-img-top mt-3" alt="{{product.title}}"/> 
+         <div class="card-body bg-white mb-3 mt-3">
+         <!--<div class="star-rating">
+            <i class="fa fa-star" *ngFor="let star of product.value"></i>
+            <i class="fa fa-star-half" *ngIf="product.key.rating.rate % 1 !== 0"></i>  
+           </div> -->
+           <h6 class="text-bold card-title">{{product.title}}</h6>
+           <h4 class="text-bold-price card-text"><strong class="strong-sm">US</strong>{{product.price| currency}}</h4> 
+          </div> 
+       </div>
+      </div> 
+      </div> 
+      <pagination-controls (pageChange)="page =$event" previousLabel="previous" nextLabel="next" class="pagination mt-5 mb-5"></pagination-controls>
+     </div>
+  </div>
+
+<ng-container *ngIf="loading"><div class="loader"></div></ng-container>
+</section>
+<app-footer></app-footer>
+

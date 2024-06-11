@@ -1,0 +1,27 @@
+<div class="container-fluid mt-0">
+    <div class="container">
+        <div class="row">
+            <div class="mb-3 col-lg-6 offset-lg-3">
+            <div class="card">
+                <h1 style="text-align: center;">{{title|uppercase}}</h1>
+            
+            <form class="mt-3 p-3" [formGroup]="categoryForm" (ngSubmit)="updateCategory()">
+            <div class="mb-3">
+                <input type="text" class="form-control"  formControlName="category" placeholder="CATEGORY">
+                <div class="text-danger" *ngIf="categoryForm.get('category')?.hasError('required') && categoryForm.get('category')?.touched">
+                    <span>The category name<strong> is required</strong></span>
+                </div>
+            </div>
+            
+            <div class="mb-3 col-lg-2 float-start">
+            <button class="form-control btn btn-primary btn-md" type="submit" [disabled]="categoryForm.invalid">Accept</button>
+            </div>
+    
+            <div class="mb-3 col-lg-2 float-end">
+                <button class="form-control btn btn-success btn-md float-end" routerLink="/administration/listCategories">Back</button>
+            </div>
+        </form>
+    </div>
+  </div>   
+ </div>
+</div>

@@ -1,0 +1,18 @@
+.container{
+
+    display:grid;
+    justify-items: center;
+   
+}
+.carousel-inner {
+    height: 400px; 
+    width: 600px;
+   
+  } 
+
+  .carousel-item{
+    height: 400px; 
+    width: 600px;
+   
+  }
+

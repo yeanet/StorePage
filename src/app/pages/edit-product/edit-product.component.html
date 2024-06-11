@@ -1,0 +1,64 @@
+<div class="container-fluid mt-0">
+<div class="container">
+    <div class="row">
+        <div class="mb-3 col-lg-6 offset-lg-3">
+        <div class="card">
+            <h1 style="text-align: center;">{{title|uppercase}}</h1>
+        
+        <form class="mt-3 p-3" [formGroup]="productForm" (ngSubmit)="updateProduct()">
+        <div class="mb-3">
+            <input type="text" class="form-control"  formControlName="product" placeholder="PRODUCT">
+            <div class="text-danger" *ngIf="productForm.get('product')?.hasError('required') && productForm.get('product')?.touched">
+                <span>The product name<strong> is required</strong></span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example"  formControlName="category">
+                <option selected>CATEGORY</option>
+                <option *ngFor="let item of prodCategory">{{item}}</option>
+              </select>
+              <div class="text-danger" *ngIf="productForm.get('category')?.hasError('required') && productForm.get('category')?.touched">
+                <span>Must select<strong> a category</strong></span>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <input type="number" class="form-control"  formControlName="price" min="1" placeholder="PRICE">
+            <div class="text-danger" *ngIf="productForm.get('price')?.hasError('required') && productForm.get('price')?.touched">
+                <span>The price<strong> is required</strong></span>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <input type="text" class="form-control"  formControlName="image" placeholder="IMAGE">
+            <div class="text-danger" *ngIf="productForm.get('image')?.hasError('required') && productForm.get('image')?.touched">
+                <span>this field<strong> is required</strong></span>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <textarea class="form-control"  rows="3"  formControlName="description" placeholder="DESCRIPTION"></textarea>
+            <div class="text-danger" *ngIf="productForm.get('description')?.hasError('required') && productForm.get('description')?.touched">
+                <span>The description<strong> is required</strong></span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <input class="form-control"  type="number"  formControlName="rating" placeholder="RATING">
+            <div class="text-danger" *ngIf="productForm.get('rating')?.hasError('required') && productForm.get('rating')?.touched">
+                <span>The rating<strong> is required</strong></span>
+            </div>
+        </div>
+
+        <div class="mb-3 col-lg-2 float-start">
+        <button class="form-control btn btn-primary btn-md" type="submit" [disabled]="productForm.invalid">Accept</button>
+        </div>
+
+        <div class="mb-3 col-lg-2 float-end">
+            <button class="form-control btn btn-success btn-md float-end" routerLink="/administration/listProducts">Back</button>
+        </div>
+    </form>
+</div>
+</div>   
+</div>
+</div>

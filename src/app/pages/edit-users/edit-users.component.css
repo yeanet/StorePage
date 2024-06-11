@@ -1,0 +1,12 @@
+.form{
+    display: block;
+    justify-content: center;
+    align-items: center;
+   /* width: 500px;*/
+    
+  }
+.userForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

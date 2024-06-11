@@ -1,0 +1,9 @@
+.navbar-brand  {
+    font-size: 3rem;
+    color:black;
+    font-family: 'LobsterTwo', sans-serif;
+    text-align: center;
+  }
+  .btn {
+   color: white;
+}

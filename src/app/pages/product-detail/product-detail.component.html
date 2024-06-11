@@ -1,0 +1,66 @@
+<app-header></app-header>
+<section class="product-detail">
+<div class="container">
+<div *ngIf="loading; else elseBlock">
+<i style="color:blue;font-size: large">LOADING....</i>
+</div>
+<ng-template #elseBlock>
+
+  <div class="container text-center mb-5 mt-5">
+    <div class="row">
+      <div class="col-sm-3">
+        <h4 class="text-bold mb-5">{{product.category|uppercase}}</h4>
+        <img class="imgtop" src="{{product.image}}"  alt="{{product.title}}">
+      </div>
+      <div class="col-sm-9">
+        <div class="row">
+          <div class="col-sm-3">
+          </div>
+          <div class="col-8 col-sm-8">
+            <h6 class="text-bold-price">{{product.title| uppercase}}</h6>
+            <br>
+            <h6 class="text-bold-price" style="color:#B12704"><strong class="strong-sm">US</strong>{{product.price| currency}}</h6>
+            <br>
+            <h6 class="text-bold-price">{{product.description}}</h6>
+            <!-- <div class="star-rating mt-5 mb-5">
+              <i class="fa fa-star" *ngFor="let star of rate"></i>
+              <i class="fa fa-star-half" *ngIf="product.rating.rate % 1 !== 0"></i>  
+             </div>  -->
+            <br>
+            <button class="btn btn-primary" (click)="agregarCarrito(product)"><i class="bi bi-cart3" aria-hidden="true"></i>
+            Add cart</button>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+</div>
+<section class="bg-light">
+<div class="container mb-3">
+<h4 class="text-bold-price">Similar Products:</h4>
+<pagination-controls (pageChange)="page =$event" previousLabel="" nextLabel="" class="pagination"></pagination-controls>
+</div>
+
+<div  class="container-lg mb-5 p-5">
+  <div class="row">
+  <div class="col-lg-3 text-center" *ngFor="let product of productsPorCateg | paginate:{ itemsPerPage: 4, currentPage: page }">
+    <div class="card border-1 bg-white mb-4" style="width: 15rem;height: 22rem;" (click)="navegate(product.id)">
+      <img src="{{product.image}}" class="grande img-fluid card-img-top mt-3" alt="{{product.title}}"/>
+      <div class="card-body bg-white mb-3 mt-3">
+         <!-- <div class="star-rating">
+          <i class="fa fa-star" *ngFor="let star of rate"></i>
+          <i class="fa fa-star-half" *ngIf="product.rating % 1 !== 0"></i>  
+         </div> --> 
+        <h6 class="text-bold">{{product.title}}</h6>
+        <h4 class="text-bold-price"><strong class="strong-sm">US</strong>{{product.price| currency}}</h4>
+      </div>
+    </div>
+    </div>
+   
+   </div>
+</div> 
+</section>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="container mt-5 mb-5">
+<form #myform="ngForm">
+<div class="container">
+  <h1 style="text-align: center;margin-bottom: 20px;"><strong>Cart products</strong></h1>
+<div  class="card-table" *ngIf="loading; else emptyCart"> 
+<h5 style="text-align: left;margin-left: 5px;">SubTotal:</h5><h3 style="color: brown;text-align: left;"><strong>{{totalCart()| currency}}</strong></h3> 
+ 
+<table class="table" style="max-width:1090px;margin: 0 auto;">
+    <thead>
+      <tr>
+        <th scope="col" style="height: 70px;">Product</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of mapCart| keyvalue">
+           <th scope="row"><img src="{{item.key.image}}" alt="{{item.key.title}}" style="width: 90px; height: 110px;padding-top: 10px;padding-bottom: 10px;"></th>
+           <th><h5 style="margin-top: 15px;margin-bottom: 5px;">{{item.key.category|uppercase}}</h5>
+            <p style="color: brown;">{{item.key.price| currency}}</p></th>
+           <td><div class="div-cart">
+             <button class="button-cart"><i class="fa-solid fa-minus" (click)="updateUnits('minus', item.value.id)"></i></button> 
+             <input class="input-cart" value="{{item.value.cantidad}}"  name="cantidad" readonly> 
+             <button class="button-cart"><i class="fa-solid fa-plus" (click)="updateUnits('add',  item.value.id)"></i></button> 
+            </div></td>
+          <td><h6 style="margin-top: 15px;margin-bottom: 5px;">Importe:</h6><h5><strong>{{item.key.price*item.value.cantidad| currency}}</strong></h5></td> 
+          <td><button class="btn-delete" (click)="eliminarCarrito(item.value.id)"><i class="bi bi-trash fa-lg" style="color: red;"></i></button></td>
+          </tr>
+    </tbody>
+  </table>
+</div>
+  <ng-template #emptyCart>
+    <h1>There is not products in the cart.</h1>
+  </ng-template>
+</div>
+</form>
+</div>
+<app-footer></app-footer>

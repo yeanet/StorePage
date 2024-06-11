@@ -1,0 +1,43 @@
+<div class="container-fluid mt-0">
+    <div class="container">
+        <div class="row">
+            <div class="mb-3 col-lg-6 offset-lg-3">
+            <div class="card">
+                <h1 style="text-align: center;">{{title|uppercase}}</h1>
+            
+            <form class="form userform mt-3 p-3" [formGroup]="userForm" (ngSubmit)="updateUser()">
+            <div class="mb-3">
+                <input type="text" class="form-control"  formControlName="mail" placeholder="MAIL">
+                <div class="text-danger" *ngIf="userForm.get('mail')?.hasError('required') && userForm.get('mail')?.touched">
+                    <span>The mail<strong> is required</strong></span>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="password" class="form-control"  formControlName="password" placeholder="PASSWORD" id="password">
+                <span class="input-group-text"><i class="fa fa-eye-slash" id="togglePassword" (click)="showPassword()"></i></span>
+                 <div class="text-danger" *ngIf="userForm.get('password')?.hasError('required') && userForm.get('password')?.touched">
+                    <span>The password<strong> is required</strong></span>
+                </div> 
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="password" class="form-control"  formControlName="reppassword" placeholder="REPEAT PASSWORD" id="reppassword">
+                <span class="input-group-text"><i class="fa fa-eye-slash" id="toggleRepPassword" (click)="showRepPassword()"></i></span>
+                <div class="text-danger" *ngIf="userForm.get('reppassword')?.hasError('required') && userForm.get('reppassword')?.touched">
+                    <span>The password<strong> is required</strong></span>
+                </div> 
+            </div>
+            
+            <div class="mb-3 col-lg-2 float-start">
+            <button class="form-control btn btn-primary btn-md" type="submit" [disabled]="userForm.invalid">Accept</button>
+            </div>
+    
+            <div class="mb-3 col-lg-2 float-end">
+                <button class="form-control btn btn-success btn-md float-end" routerLink="/administration/listUsers">Back</button>
+            </div>
+        </form>
+    </div>
+  </div>   
+ </div>
+</div>

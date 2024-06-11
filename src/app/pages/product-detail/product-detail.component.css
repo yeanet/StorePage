@@ -1,0 +1,40 @@
+.container{
+    display: flex;
+    justify-content:left;
+}
+.imgtop{
+    width: 250px;
+    height: 250px;
+}
+.pagination{
+    justify-content:end;
+}
+ 
+.card:hover{
+    box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+    transition : 0.1s ease-in-out;
+    border-radius : 5px;
+}
+img.grande{
+   width: 150px;
+   height: 150px;
+   position: relative;
+   margin: auto;
+   top: 5px;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   }
+.strong-sm{
+    font-size: 13px;
+    font-weight: 600 !important;
+    position: relative;
+    top: -.55em;    
+}
+.fa-star{
+ color:goldenrod;
+}
+.fa-star-half{
+    color:goldenrod;
+}
+

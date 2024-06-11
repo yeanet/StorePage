@@ -1,0 +1,56 @@
+.button-cart{
+align-items: center;
+border:none;
+background: #fff;
+padding: 3px;
+border-radius: 4px;
+width: 40px;
+width: 40px;
+}
+.input-cart{
+    align-items: center;
+    text-align: center;
+    border:none;
+    background: #fff;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+    text-decoration: color(black);
+    background-color:#f2f2f2;
+}
+
+.div-cart{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    width: fit-content;
+    border-color: black;
+    height: fit-content;
+    margin-top: 30px;
+    margin-bottom: 5px
+}
+
+.btn-delete{
+    background-color: white;
+    border:none;
+    width: fit-content;
+    height: fit-content;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.card-table{
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-color:#f2f2f2;
+  border-style: solid;
+  border-radius: 15px;
+  border-top-width:25px ;
+  border-bottom-width: 20px;
+  border-left-width: 20px;
+  border-right-width: 20px;
+  max-width: 1100px;
+  text-align: center;
+  margin: 0 auto;
+  background-color:#f2f2f2;
+  ;
+}

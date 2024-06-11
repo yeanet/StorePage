@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div  class="container-lg mb-5 p-5">
+  <div class="container">
+    <h3><strong>Results</strong></h3>
+
+<div id="toolbar_wrapper mt-5" class="shop_toolbar_wrapper">
+  <select class="form-select" id="inputSearch" (change)="onChange()" [(ngModel)]="opcionOrder">
+    <option selected>Order by...</option>
+    <option value="1">Lower price</option>
+    <option value="2">higher price</option>
+  </select>
+</div>
+<div class="row">
+    <div class="col-lg-3 text-center" *ngFor="let product of listProducts$| async">
+      <div class="card border-1 bg-white mb-4" style="width: 18rem;height: 22rem;" (click)="navegate(product.id)">
+        <img src="{{product.image}}" class="grande img-fluid card-img-top mt-3" alt="{{product.title}}"/>
+        <div class="card-body bg-white mb-3 mt-3">
+           <div class="star-rating">
+            <i class="fa fa-star" *ngFor="let star of getStars(product)"></i>
+            <i class="fa fa-star-half" *ngIf="product.rating % 1 !== 0"></i>  
+           </div> 
+          <h6 class="text-bold">{{product.title}}</h6>
+          <h4 class="text-bold-price"><strong class="strong-sm">US</strong>{{product.price| currency}}</h4>
+        </div>
+      </div>
+      </div>
+      </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+      <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-50">
+              <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                  <!-- <span class="fs-5 d-none d-sm-inline">Menu</span> -->
+                  <span class="navbar-brand">Super Market</span>
+              </a>
+              <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <li class="nav-item">
+                      <a routerLink="" class="nav-link align-middle px-0">
+                          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Store</span>
+                      </a>
+                  </li>
+
+                  <li>
+                    <a routerLink="listProducts" class="nav-link px-0 align-middle">
+                      <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span></a>
+                 </li>
+
+                  <li>
+                      <a routerLink="listCategories" class="nav-link px-0 align-middle">
+                          <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Categories</span></a>
+                  </li>
+               
+                  <li>
+                      <a routerLink="listUsers" class="nav-link px-0 align-middle">
+                          <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Users</span> </a>
+                  </li>
+              </ul>
+              <hr>
+          </div>
+     </div>
+     <div class="container-sm" style="width: fit-content;">
+      <div class="row">
+          <div class="col py-0">
+               <h1 style="text-align: center;">PRODUCTS</h1> 
+                          <button type="button" class="btn btn-primary btn-sm mb-3 mt-3 ms-5" routerLink="/administration/listProducts/addProduct">Add Product</button>
+                              <table class="table table-hover mb-5" style="width: fit-content;margin: 3px;">
+                                  <thead>
+                                    <tr>
+                                      <!-- <th scope="col">#</th> -->
+                                      <th scope="col">Image</th>
+                                      <th scope="col">Product</th>
+                                      <th scope="col">Price</th>
+                                      <th scope="col">Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr *ngFor="let product of sortedList;let i=index">
+                                      <!-- <th scope="row">{{product.id}}</th> -->
+                                      <td><img src="{{product.image}}" alt="image" style="width: 80px; height: 80px;"></td>
+                                      <td>{{product.title}}</td>
+                                      <td>{{product.price| currency}}</td>
+                                      <td><button type="button" class="m-2" routerLink="/administration/listProducts/updateProduct/{{product.id}}"><i class="bi bi-pencil-square btn-primary" ></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="eliminarProducto(product.id)"><i class="bi bi-trash"></i></button> 
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div> 
+                      </div>
+              </div>             
+          </div>
+      </div>
+      
+
+
+     
+ 
