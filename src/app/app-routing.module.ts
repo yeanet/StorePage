@@ -15,6 +15,7 @@ import { ListCategoriesComponent } from './pages/list-categories/list-categories
 import { ListUsersComponent } from './pages/list-users/list-users.component';
 import { EditCategorieComponent } from './pages/edit-categorie/edit-categorie.component';
 import { EditUsersComponent } from './pages/edit-users/edit-users.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
 
@@ -26,21 +27,36 @@ const routes: Routes = [
   {path:'search',component:SearchComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
-  {path:'administration',component:AdministrationComponent},
-  {path:'administration/listProducts', component: ListProductsComponent},
+   {
+    path:'administration',
+    component:AdministrationComponent,
+    children: [
+    {
+      path: 'listProducts',
+      component: ListProductsComponent,
+    },
+    {
+      path:'listCategories', 
+    component: ListCategoriesComponent
+    },
+    {
+      path:'listUsers',
+       component: ListUsersComponent
+    }
+  ],  
+},
   {path:'administration/listProducts/addProduct',component:EditProductComponent},
   {path:'administration/listProducts/updateProduct/:id',component:EditProductComponent},
-  {path:'administration/listCategories', component: ListCategoriesComponent},
-  {path:'administration/listCategories/addCategorie',component:EditCategorieComponent},
-  {path:'administration/listCategories/updateCategorie/:id',component:EditCategorieComponent},
-  {path:'administration/listUsers', component: ListUsersComponent},
+  {path:'administration/listCategories/addCategory',component:EditCategorieComponent},
+  {path:'administration/listCategories/updateCategory/:id',component:EditCategorieComponent},
   {path:'administration/listUsers/addUser', component:EditUsersComponent},
-  {path:'administration/listUsers/updateUser/:id', component: EditUsersComponent},
-  {path:'**',redirectTo:'', pathMatch:'full'}
+  {path:'administration/listUsers/updateUser/:id', component: EditUsersComponent}, 
+  {path:'**',redirectTo:'', pathMatch:'full'} 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+  //imports: [RouterModule.forChild(layoutRoutes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div  class="container-lg mb-5 p-5">
   <div class="container">
     <h3><strong>Results</strong></h3>
@@ -12,7 +11,7 @@
 </div>
 <div class="row">
     <div class="col-lg-3 text-center" *ngFor="let product of listProducts$| async">
-      <div class="card border-1 bg-white mb-4" style="width: 18rem;height: 22rem;" (click)="navegate(product.id)">
+      <div class="card border-1 bg-white mb-4" style="width: 15rem;height: 22rem;" (click)="navegate(product.id)">
         <img src="{{product.image}}" class="grande img-fluid card-img-top mt-3" alt="{{product.title}}"/>
         <div class="card-body bg-white mb-3 mt-3">
            <div class="star-rating">
@@ -27,4 +26,3 @@
       </div>
   </div>
 </div>
-<app-footer></app-footer>
